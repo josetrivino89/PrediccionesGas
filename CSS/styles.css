@@ -1,0 +1,228 @@
+body {
+  margin: 0;
+  padding: 0;
+  font-family: -apple-system, BlinkMacSystemFont, sans-serif;
+  overflow: auto;
+  background: linear-gradient(to bottom right, #7FB3D5, #E0E0E0);
+  /* Aquí defines los colores del gradiente */
+  animation: gradient 15s ease infinite;
+  background-size: 400% 400%;
+  background-attachment: fixed;
+}
+
+.navbar-toggler button {
+  border: none; /* Eliminar borde */
+  background-color: transparent; /* Hacer el fondo transparente si es necesario */
+  padding: 0; /* Ajustar el relleno si es necesario */
+}
+
+.navbar-toggler button:focus {
+  outline: none; /* Eliminar el contorno cuando se enfoca */
+}
+
+.navbar-toggler-icon-mariposa {
+  width: 24px; /* Ajustar el tamaño de la imagen según sea necesario */
+  height: 24px;
+}
+
+
+.navbar-brand {
+  display: inline-block;
+  text-decoration: none;
+  color: inherit;
+}
+
+.navbar-brand img.logo_naturgy {
+  height: 50px; /* Ajusta la altura del logo según sea necesario */
+  width: auto; /* Mantiene la proporción de la imagen */
+}
+
+.navbar-brand img.logo_naturgy_menu {
+  height: 35px; /* Ajusta la altura del logo según sea necesario */
+  width: auto; /* Mantiene la proporción de la imagen */
+}
+
+@keyframes gradient {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+.wave {
+  background: rgb(255 255 255 / 25%);
+  border-radius: 1000% 1000% 0 0;
+  position: fixed;
+  width: 200%;
+  height: 12em;
+  animation: wave 10s -3s linear infinite;
+  transform: translate3d(0, 0, 0);
+  opacity: 0.8;
+  bottom: 0;
+  left: 0;
+  z-index: -1;
+}
+
+.wave:nth-of-type(2) {
+  bottom: -1.25em;
+  animation: wave 18s linear reverse infinite;
+  opacity: 0.8;
+}
+
+.wave:nth-of-type(3) {
+  bottom: -2.5em;
+  animation: wave 20s -1s reverse infinite;
+  opacity: 0.9;
+}
+
+@keyframes wave {
+  2% {
+      transform: translateX(1);
+  }
+
+  25% {
+      transform: translateX(-25%);
+  }
+
+  50% {
+      transform: translateX(-50%);
+  }
+
+  75% {
+      transform: translateX(-25%);
+  }
+
+  100% {
+      transform: translateX(1);
+  }
+}
+
+.btn-close {
+  border: none; /* Quita el borde del botón */
+  background-color: transparent; /* Fondo transparente */
+  padding: 0; /* Elimina el padding por defecto */
+  width: 24px; /* Ancho inicial del botón */
+  height: 24px; /* Alto inicial del botón */
+  transition: transform 0.3s ease; /* Transición para el efecto hover */
+}
+
+.btn-close:hover {
+  transform: scale(1.2); /* Escala el botón al 120% cuando se hace hover */
+}
+
+.navbar-toggler {
+  border: none; /* Quita el borde del botón */
+  background-color: transparent; /* Fondo transparente */
+  padding: 0.25rem 0.75rem; /* Ajusta el padding según tus necesidades */
+  transition: transform 0.3s ease; /* Transición para el efecto hover */
+}
+
+.navbar-toggler:hover {
+  transform: scale(1.1); /* Escala el botón al 110% cuando se hace hover */
+}
+
+.navbar-toggler:focus {
+  outline: none; /* Quita el contorno al hacer foco en el botón */
+}
+
+.navbar-toggler-icon-mariposa {
+  display: inline-block;
+  width: 1.5em;
+  height: 1.5em;
+  vertical-align: middle;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 100%;
+}
+
+.about-us {
+  background-color:transparent; /* Fondo blanco */
+  border-radius: 0px;
+  box-shadow: none; /* Sombra */
+  padding: 50px;
+  margin-top: 50px;
+  border: none;
+}
+
+.team-member {
+  margin-bottom: 30px;
+  background-color: transparent; /* Fondo transparente para cada miembro */
+  box-shadow: none; /* Eliminar sombras si hay */
+}
+
+.member-photo {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 5px solid #004481; /* Color del borde */
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Sombra */
+  transition: transform 0.3s ease; /* Efecto de hover */
+}
+
+.member-photo:hover {
+  transform: scale(1.1); /* Aumenta el tamaño al hacer hover */
+}
+
+.linkedin-icon {
+  width: 30px;
+  height: 30px;
+  margin-top: 10px;
+  transition: transform 0.3s ease;
+}
+
+.linkedin-icon:hover {
+  transform: scale(1.2); /* Efecto hover en el icono de LinkedIn */
+}
+
+/* Estilo para dispositivos móviles */
+@media (max-width: 768px) {
+  .team-member {
+      margin-bottom: 20px;
+  }
+}
+/* Estilo para los íconos */
+.social-icons i {
+  font-size: 40px; /* Ajusta el tamaño de los íconos aquí */
+  margin: 0 10px;
+  cursor: pointer;
+}
+
+/* Estilo específico para LinkedIn y WhatsApp */
+.social-icons i.fa-linkedin {
+  color: #0077B5;
+}
+
+.social-icons i.fa-whatsapp {
+  color: #25D366;
+}
+
+/* Eliminar el subrayado de los enlaces */
+.social-icons a {
+  text-decoration: none;
+}
+
+/* Alinear íconos en línea */
+.social-icons {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Diseño de las imágenes y texto */
+.team-member {
+  margin-bottom: 30px;
+}
+
+/* Ajustar el ancho máximo de las imágenes */
+.member-photo {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  object-fit: cover;
+}

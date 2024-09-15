@@ -1,0 +1,70 @@
+Breve descripción del contenido de los archivos:
+
+1)- AEMET_Previsiones.csv --> Contiene las previsiones calculadas por AEMET con la siguiente apertura:
+FECHA_FICH  --> Fecha en la cual se calcula la previsión
+HORA_FICH  --> Hora en la cual se calcula la previsión
+FECHA  --> Fecha para la cual se calcula la previsión
+DESC_ESTACION  --> Código descriptivo de la estación meteorológica
+ID_ESTACION  --> Código identificador de la estación meteorológica
+T_MAX  --> Temperatura máxima prevista para el día "FECHA"
+T_MIN  --> Temperatura mínima prevista para el día "FECHA"
+al --> Altitud a la que se encuentra la estación (Irrelevante)
+
+
+2)- AEMET_Realidad.csv --> Contiene los datos históricos reales registrados por AEMET con la siguiente apertura:
+INDICATIVO  --> Código identificador de la estación meteorológica, es el mismo que el ID_ESTACION del fichero AEMET_Previsiones.csv
+ANYO  --> Año de la fecha en la que se registró la temperatura
+MES  --> Mes de la fecha en la que se registró la temperatura
+DIA  --> Día de la fecha en la que se registró la temperatura
+NOMBRE  --> Código descriptivo de la estación meteorológica, es el mismo que el DESC_ESTACION del fichero AEMET_Previsiones.csv
+ALTITUD  --> Altitud a la que se encuentra la estación (Irrelevante)
+NOM_PROV  --> Código descriptivo de la provincia donde se encuentra la estación meteorológica
+LONGITUD  --> Longitud en la que se encuentra la estación 
+LATITUD  --> Latitud en la que se encuentra la estación 
+MAX  --> Temperatura máxima registrada para el día "ANYO-MES-DIA"
+MIN  --> Temperatura mínima registrada para el día "ANYO-MES-DIA"
+
+
+3)- clientes_y_consumo.csv --> Contiene los datos históricos del número de clientes y su consumo agregados con la siguiente apertura:
+MES  --> Fecha de la foto de la cartera de clientes con la que se comienza dicho "MES"
+PCTD  --> Punto de conexión a la red de gasoductos secundaria
+COD_POST  --> Código postal donde se encuentra el punto de suministro del cliente
+Comercializadora  --> Comercializadora a la que pertenece el cliente (hay 3: GNS=0033, GNSUR=0052 y NC=0762)
+Tarifa_ATR  --> Peaje al que pertenece el cliente, el peaje define al tipo de consumidor: RL1=Cocina, RL2=Cocina+Calefacción, RL3=Cocina+Calefacción (mayor consumo), >=RL4=PYMES y clientes industriales
+nCUPS  --> Número de puntos de suministro
+Consumo_kWh  --> Consumo de los puntos de suministro
+n_fallo_lectura  --> CUPS con errores de lectura que viene sin informar, consumo=?
+
+
+4)- Coordenadas_CCPP.csv --> Contiene las coordenadas atribuidas a cada código postal.
+
+
+5)- Emisión_y_Repartos.csv --> Contiene los datos históricos de Emisión y Repartos agregados en GWh con la siguiente apertura:
+comer  --> Comercializadora a la que pertenece el cliente (hay 3: GNS=0033, GNSUR=0052 y NC=0762)
+Punto  --> Punto de conexión a la red de gasoductos secundaria
+fecha_gas  --> Día de gas para el que se ha realizado la medida
+Reparto_N1  --> Reparto diario provisional calculado de forma diaria y con un lag de 1 día (ídem todo N1)
+Telemedida_N1  --> Suma de la telemedida diario provisional de todos los clientes de la comercializadora
+No_Telemedido_T1_34_N1  --> Suma de la no telemedida diario provisional de todos los clientes tipo 1 RL>=4 de la comercializadora 
+No_Telemedido_T1_No34_N1  --> Suma de la no telemedida diario provisional de todos los clientes tipo 1 RL<4 de la comercializadora 
+No_Telemedido_T2_N1  -->  Suma de la no telemedida diario provisional de todos los clientes tipo 2 RL1, 2 y 3 de la comercializadora 
+Mermas_N1  --> Mermas reconocidas por el sistema diarias provisionales
+Residuo_N1  --> Residuo o componente faltante del diario provisional (también llamado saldo de mermas)
+Reparto_M3  --> Reparto final provisional calculado de forma diaria y con un lag de 3 meses (ídem todo M3)
+Telemedida_M3  --> Suma de la telemedida final provisional de todos los clientes de la comercializadora
+No_Telemedido_T1_34_M3  --> Suma de la no telemedida final provisional de todos los clientes tipo 1 RL>=4 de la comercializadora 
+No_Telemedido_T1_No34_M3  --> Suma de la no telemedida final provisional de todos los clientes tipo 1 RL<4 de la comercializadora 
+No_Telemedido_T2_M3  -->  Suma de la no telemedida final provisional de todos los clientes tipo 2 RL1, 2 y 3 de la comercializadora 
+Mermas_M3--> Mermas reconocidas por el sistema finales provisionales
+Residuo_M3  --> Residuo o componente faltante del final provisional (también llamado diferencias de medición)  
+Reparto_M15  --> Reparto final definitivo calculado de forma diaria y con un lag de 15 meses (ídem todo M15)
+Telemedida_M15  --> Suma de la telemedida final definitiva de todos los clientes de la comercializadora
+No_Telemedido_T1_34_M15  --> Suma de la no telemedida final definitiva de todos los clientes tipo 1 RL>=4 de la comercializadora 
+No_Telemedido_T1_No34_M15  --> Suma de la no telemedida final definitiva de todos los clientes tipo 1 RL<4 de la comercializadora 
+No_Telemedido_T2_M15  -->  Suma de la no telemedida final definitiva de todos los clientes tipo 2 RL1, 2 y 3 de la comercializadora 
+Mermas_M15--> Mermas reconocidas por el sistema final definitiva
+Residuo_M15  --> Residuo o componente faltante del final definitivo (también llamado diferencias de medición)  
+
+
+6)- ETL.egp --> Irrelevante, es mi script SAS para extraer los datos del ejercicio
+
